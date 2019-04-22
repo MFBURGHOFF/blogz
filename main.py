@@ -32,7 +32,7 @@ def blog_page():
         blog_title = post.title
         blog_body = post.body
 
-        return render_template('entries.html', title="Blog Entry #"+blog_id, blog_title=blog_title, blog_body=blog_body)
+        return render_template('entries.html', title="Blog #"+blog_id, blog_title=blog_title, blog_body=blog_body)
     
     sort = request.args.get('sort')
 

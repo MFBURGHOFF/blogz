@@ -4,16 +4,12 @@
 
 <h1>Blog!</h1>
 
-{% if blogs|length == 0 %}
-    <p>No blogs yet</p>
-    {% else %}
-        {% for blog in blogs %}
-        <h1><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h1>
-
-        <p>{{blog.body}}</p>
-        <hr>
-
+    {% for blog in blogs %}
+    <h1><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h1>
+    <p>Created by: <a href="/blog?userid={{blog.owner.id}}">{{blog.owner.username}}</a></p>
+    <p>{{blog.body}}</p>
+        
+    <hr>
     {% endfor %}
-{% endif %}
 
 {% endblock %}
